@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="{{ t.lang_code }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bistouria.ma | Simulation Médicale Maroc</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header>
+    <div class="container nav-inner">
+        <a href="/?lang={{ t.lang_code }}" class="brand">BISTOURIA<span>.MA</span></a>
+        <div class="nav-actions">
+            <a href="{{ instagram }}" target="_blank" class="nav-link">Instagram</a>
+            <a href="{{ t.switch_url }}" class="lang-btn">{{ t.switch_label }}</a>
+            <a href="#order" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">{{ t.cta_primary }}</a>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <span class="badge">{{ t.badge }}</span>
+        <h1>{{ t.hero_title }}</h1>
+        <p>{{ t.hero_sub }}</p>
+        <div class="hero-btns">
+            <a href="#order" class="btn btn-primary">{{ t.cta_primary }}</a>
+            <a href="#products" class="btn btn-outline">{{ t.cta_secondary }}</a>
+        </div>
+    </div>
+</section>
+
+<div class="trust-bar">
+    <div class="container trust-grid">
+        <div>✓ {{ t.trust_1 }}</div>
+        <div>✓ {{ t.trust_2 }}</div>
+        <div>✓ {{ t.trust_3 }}</div>
+    </div>
+</div>
+
+<!-- قسم محتويات الطقم -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="section-head">
+            <h2>{{ t.kit_box_title }}</h2>
+            <p>{{ t.kit_box_sub }}</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-num">1</span>
+                <h3>{{ t.item_1_title }}</h3>
+                <p>{{ t.item_1_desc }}</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-num">2</span>
+                <h3>{{ t.item_2_title }}</h3>
+                <p>{{ t.item_2_desc }}</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-num">3</span>
+                <h3>{{ t.item_3_title }}</h3>
+                <p>{{ t.item_3_desc }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- قسم المنتجات -->
+<section id="products" class="section">
+    <div class="container">
+        <div class="section-head">
+            <h2>{{ t.products_title }}</h2>
+            <p>{{ t.products_sub }}</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- الطقم الكامل -->
+            <div class="product-card featured">
+                <img src="{{ url_for('static', filename='images/Pack-1.jpg') }}" alt="Surgical Suture Kit" class="product-img">
+                <div class="product-body">
+                    <h3>{{ t.kit_name }}</h3>
+                    <p>{{ t.kit_desc }}</p>
+                    <div class="price-row">
+                        <span class="price">{{ t.kit_price }} {{ t.currency }}</span>
+                        <button type="button" class="btn btn-primary" onclick="selectProduct(0)">{{ t.select_btn }}</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- وسادة السيليكون - نوع 1 -->
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='images/skill-1.jpg') }}" alt="Silicone Pad Model 1" class="product-img">
+                <div class="product-body">
+                    <h3>{{ t.pad1_name }}</h3>
+                    <p>{{ t.pad1_desc }}</p>
+                    <div class="price-row">
+                        <span class="price">{{ t.pad_price }} {{ t.currency }}</span>
+                        <button type="button" class="btn btn-primary" onclick="selectProduct(1)">{{ t.select_btn }}</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- وسادة السيليكون - نوع 2 -->
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='images/skill-2.jpg') }}" alt="Silicone Pad Model 2" class="product-img">
+                <div class="product-body">
+                    <h3>{{ t.pad2_name }}</h3>
+                    <p>{{ t.pad2_desc }}</p>
+                    <div class="price-row">
+                        <span class="price">{{ t.pad_price }} {{ t.currency }}</span>
+                        <button type="button" class="btn btn-primary" onclick="selectProduct(2)">{{ t.select_btn }}</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- وسادة السيليكون - نوع 3 -->
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='images/skill-3.jpg') }}" alt="Silicone Pad Model 3" class="product-img">
+                <div class="product-body">
+                    <h3>{{ t.pad3_name }}</h3>
+                    <p>{{ t.pad3_desc }}</p>
+                    <div class="price-row">
+                        <span class="price">{{ t.pad_price }} {{ t.currency }}</span>
+                        <button type="button" class="btn btn-primary" onclick="selectProduct(3)">{{ t.select_btn }}</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- وسادة السيليكون - نوع 4 -->
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='images/skill-4.jpg') }}" alt="Silicone Pad Model 4" class="product-img">
+                <div class="product-body">
+                    <h3>{{ t.pad4_name }}</h3>
+                    <p>{{ t.pad4_desc }}</p>
+                    <div class="price-row">
+                        <span class="price">{{ t.pad_price }} {{ t.currency }}</span>
+                        <button type="button" class="btn btn-primary" onclick="selectProduct(4)">{{ t.select_btn }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- قسم الأسئلة الشائعة -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="section-head">
+            <h2>{{ t.faq_title }}</h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h4>{{ t.faq_1_q }}</h4>
+                <p>{{ t.faq_1_a }}</p>
+            </div>
+            <div class="faq-item">
+                <h4>{{ t.faq_2_q }}</h4>
+                <p>{{ t.faq_2_a }}</p>
+            </div>
+            <div class="faq-item">
+                <h4>{{ t.faq_3_q }}</h4>
+                <p>{{ t.faq_3_a }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- استمارة الطلب -->
+<section id="order" class="section">
+    <div class="container">
+        <div class="order-box">
+            <div class="section-head" style="margin-bottom: 24px;">
+                <h2>{{ t.form_title }}</h2>
+                <p>{{ t.form_sub }}</p>
+            </div>
+
+            <form onsubmit="sendWhatsAppOrder(event)">
+                <div class="form-group">
+                    <label for="product">{{ t.lbl_product }}</label>
+                    <select id="product" required>
+                        <option value="Kit Complet (250 MAD)">{{ t.opt_kit }}</option>
+                        <option value="Coussinet Silicone - Modèle 1 (85 MAD)">{{ t.opt_pad1 }}</option>
+                        <option value="Coussinet Silicone - Modèle 2 (85 MAD)">{{ t.opt_pad2 }}</option>
+                        <option value="Coussinet Silicone - Modèle 3 (85 MAD)">{{ t.opt_pad3 }}</option>
+                        <option value="Coussinet Silicone - Modèle 4 (85 MAD)">{{ t.opt_pad4 }}</option>
+                        <option value="Pack Pro : Kit + Coussinet (320 MAD)">{{ t.opt_bundle }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">{{ t.lbl_name }}</label>
+                    <input type="text" id="name" placeholder="{{ t.ph_name }}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">{{ t.lbl_city }}</label>
+                    <input type="text" id="city" placeholder="{{ t.ph_city }}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">{{ t.lbl_phone }}</label>
+                    <input type="tel" id="phone" placeholder="{{ t.ph_phone }}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="delivery">{{ t.lbl_delivery }}</label>
+                    <select id="delivery" required>
+                        <option value="{{ t.del_tanger }}">{{ t.del_tanger }}</option>
+                        <option value="{{ t.del_maroc }}">{{ t.del_maroc }}</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-full">{{ t.submit_btn }}</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="social-links">
+        <a href="{{ instagram }}" target="_blank">Instagram (@bistouria.ma)</a>
+        <span>•</span>
+        <a href="mailto:{{ email }}">{{ email }}</a>
+    </div>
+    <p>© 2026 Bistouria.ma — {{ t.footer_note }}</p>
+</footer>
+
+<script>
+    function selectProduct(index) {
+        const select = document.getElementById('product');
+        select.selectedIndex = index;
+        document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function sendWhatsAppOrder(e) {
+        e.preventDefault();
+        const waNumber = "{{ whatsapp }}";
+        const product = document.getElementById('product').value;
+        const name = document.getElementById('name').value;
+        const city = document.getElementById('city').value;
+        const phone = document.getElementById('phone').value;
+        const delivery = document.getElementById('delivery').value;
+
+        const message = `Bonjour Bistouria.ma, je souhaite commander :\n` +
+                        `- Produit : ${product}\n` +
+                        `- Nom : ${name}\n` +
+                        `- Ville : ${city}\n` +
+                        `- Téléphone : ${phone}\n` +
+                        `- Réception : ${delivery}`;
+
+        const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+    }
+</script>
+
+</body>
+</html>
