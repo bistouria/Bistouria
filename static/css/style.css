@@ -207,6 +207,67 @@ header {
 }
 .price { font-size: 1.35rem; font-weight: 800; color: var(--primary); }
 
+/* Product comparison */
+.comparison-section { background: #f1f8fc; }
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 20px;
+}
+.comparison-card {
+    display: flex;
+    flex-direction: column;
+    padding: 26px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(15, 61, 94, 0.05);
+}
+.comparison-card h3 {
+    margin-bottom: 8px;
+    color: var(--primary);
+    font-size: 1.2rem;
+    line-height: 1.35;
+}
+.comparison-card-featured {
+    border: 2px solid var(--accent);
+    box-shadow: 0 10px 24px rgba(14, 165, 233, 0.12);
+}
+.comparison-badge {
+    align-self: flex-start;
+    margin: -8px 0 14px;
+    padding: 5px 11px;
+    border-radius: 20px;
+    background: #e0f2fe;
+    color: var(--accent-dark);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+.comparison-detail { margin-top: 16px; }
+.comparison-detail h4 {
+    margin-bottom: 4px;
+    color: var(--primary);
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+.comparison-detail p { color: var(--muted); font-size: 0.93rem; }
+.comparison-btn {
+    width: 100%;
+    margin-top: auto;
+    padding: 12px 16px;
+    background: #e0f2fe;
+    color: var(--primary);
+}
+.comparison-btn:hover { background: #bae6fd; }
+.comparison-card-featured .comparison-btn {
+    margin-top: auto;
+    background: var(--accent);
+    color: #fff;
+}
+.comparison-card-featured .comparison-btn:hover { background: var(--accent-dark); }
+
 /* FAQ */
 .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
 .faq-item {
@@ -266,6 +327,9 @@ footer {
 @media (max-width: 640px) {
     body { padding-bottom: 76px; }
     .order-box { padding: 24px 18px; }
+    .comparison-grid { grid-template-columns: 1fr; gap: 16px; }
+    .comparison-card { padding: 22px; }
+    .comparison-btn { margin-top: 22px; }
     .mobile-sticky-cta {
         display: block;
         position: fixed;

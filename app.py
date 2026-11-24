@@ -50,6 +50,22 @@ CONTENT = {
         "currency": "MAD",
         "select_btn": "Sélectionner",
 
+        # Comparatif des packs
+        "comparison_title": "Quel pack choisir pour vos stages ?",
+        "comparison_single": "Coussinet Individuel",
+        "comparison_single_includes": "Un coussinet en silicone",
+        "comparison_single_ideal": "Étudiants ayant déjà les instruments",
+        "comparison_kit": "Kit Complet de Suture",
+        "comparison_kit_includes": "Coussinet silicone 3 couches + instruments en acier inoxydable + fils de suture + trousse de transport",
+        "comparison_kit_ideal": "Pour commencer à pratiquer avec tout le nécessaire",
+        "comparison_recommended": "Recommandé",
+        "comparison_bundle": "Pack 2 Coussinets",
+        "comparison_bundle_includes": "Deux coussinets en silicone différents avec des motifs de plaies variés",
+        "comparison_bundle_ideal": "Préparation intensive aux examens ou partage avec un camarade",
+        "comparison_includes_label": "Comprend",
+        "comparison_ideal_label": "Idéal pour",
+        "comparison_choose": "Choisir ce pack",
+
         # Section FAQ
         "faq_title": "Questions Fréquentes (FAQ)",
         "faq_1_q": "Puis-je vérifier le kit avant de payer ?",
@@ -122,6 +138,22 @@ CONTENT = {
         "pad_price": 85,
         "currency": "MAD",
         "select_btn": "Select",
+
+        # Pack comparison
+        "comparison_title": "Which kit is right for your clinical rotations?",
+        "comparison_single": "Single Silicone Pad",
+        "comparison_single_includes": "One silicone pad",
+        "comparison_single_ideal": "Students who already own surgical instruments",
+        "comparison_kit": "Complete Suture Kit",
+        "comparison_kit_includes": "3-layer silicone pad + stainless steel instruments + suture threads + carrying pouch",
+        "comparison_kit_ideal": "Complete practice from scratch",
+        "comparison_recommended": "Most Popular",
+        "comparison_bundle": "2-Pad Bundle",
+        "comparison_bundle_includes": "Two different silicone pads with varied wound patterns",
+        "comparison_bundle_ideal": "Intensive exam preparation or sharing with a classmate",
+        "comparison_includes_label": "Includes",
+        "comparison_ideal_label": "Ideal for",
+        "comparison_choose": "Choose this pack",
 
         # FAQ Section
         "faq_title": "Frequently Asked Questions (FAQ)",
