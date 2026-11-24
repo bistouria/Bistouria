@@ -14,7 +14,7 @@
         <div class="nav-actions">
             <a href="{{ instagram }}" target="_blank" class="nav-link">Instagram</a>
             <a href="{{ t.switch_url }}" class="lang-btn">{{ t.switch_label }}</a>
-            <a href="#order" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">{{ t.cta_primary }}</a>
+            <a href="#order-form" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">{{ t.cta_primary }}</a>
         </div>
     </div>
 </header>
@@ -25,19 +25,11 @@
         <h1>{{ t.hero_title }}</h1>
         <p>{{ t.hero_sub }}</p>
         <div class="hero-btns">
-            <a href="#order" class="btn btn-primary">{{ t.cta_primary }}</a>
+            <a href="#order-form" class="btn btn-primary">{{ t.cta_primary }}</a>
             <a href="#products" class="btn btn-outline">{{ t.cta_secondary }}</a>
         </div>
     </div>
 </section>
-
-<div class="trust-bar">
-    <div class="container trust-grid">
-        <div>✓ {{ t.trust_1 }}</div>
-        <div>✓ {{ t.trust_2 }}</div>
-        <div>✓ {{ t.trust_3 }}</div>
-    </div>
-</div>
 
 <!-- قسم محتويات الطقم -->
 <section class="section section-alt">
@@ -175,39 +167,42 @@
                 <p>{{ t.form_sub }}</p>
             </div>
 
-            <form onsubmit="sendWhatsAppOrder(event)">
+            <form id="order-form" onsubmit="sendWhatsAppOrder(event)">
                 <div class="form-group">
                     <label for="product">{{ t.lbl_product }}</label>
                     <select id="product" required>
-                        <option value="Kit Complet (250 MAD)">{{ t.opt_kit }}</option>
-                        <option value="Coussinet Silicone - Modèle 1 (85 MAD)">{{ t.opt_pad1 }}</option>
-                        <option value="Coussinet Silicone - Modèle 2 (85 MAD)">{{ t.opt_pad2 }}</option>
-                        <option value="Coussinet Silicone - Modèle 3 (85 MAD)">{{ t.opt_pad3 }}</option>
-                        <option value="Coussinet Silicone - Modèle 4 (85 MAD)">{{ t.opt_pad4 }}</option>
-                        <option value="Pack Pro : Kit + Coussinet (320 MAD)">{{ t.opt_bundle }}</option>
+                        <option value="Kit Complet de Suture">{{ t.opt_kit }}</option>
+                        <option value="Coussinet Individuel">{{ t.opt_pad }}</option>
+                        <option value="Pack 2 Coussinets">{{ t.opt_pack }}</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="name">{{ t.lbl_name }}</label>
-                    <input type="text" id="name" placeholder="{{ t.ph_name }}" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="city">{{ t.lbl_city }}</label>
-                    <input type="text" id="city" placeholder="{{ t.ph_city }}" required>
+                    <input type="text" id="name" autocomplete="name" placeholder="{{ t.ph_name }}" required>
                 </div>
 
                 <div class="form-group">
                     <label for="phone">{{ t.lbl_phone }}</label>
-                    <input type="tel" id="phone" placeholder="{{ t.ph_phone }}" required>
+                    <input type="tel" id="phone" autocomplete="tel" inputmode="tel" placeholder="{{ t.ph_phone }}" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="delivery">{{ t.lbl_delivery }}</label>
-                    <select id="delivery" required>
-                        <option value="{{ t.del_tanger }}">{{ t.del_tanger }}</option>
-                        <option value="{{ t.del_maroc }}">{{ t.del_maroc }}</option>
+                    <label for="city">{{ t.lbl_city }}</label>
+                    <select id="city" autocomplete="address-level2" required>
+                        <option value="" disabled selected>{{ t.city_placeholder }}</option>
+                        <option value="Rabat">Rabat</option>
+                        <option value="Salé">Salé</option>
+                        <option value="Casablanca">Casablanca</option>
+                        <option value="Tanger">{% if t.lang_code == "en" %}Tangier{% else %}Tanger{% endif %}</option>
+                        <option value="Marrakech">Marrakech</option>
+                        <option value="Fès">{% if t.lang_code == "en" %}Fez{% else %}Fès{% endif %}</option>
+                        <option value="Agadir">Agadir</option>
+                        <option value="Oujda">Oujda</option>
+                        <option value="Meknès">{% if t.lang_code == "en" %}Meknes{% else %}Meknès{% endif %}</option>
+                        <option value="Tétouan">{% if t.lang_code == "en" %}Tetouan{% else %}Tétouan{% endif %}</option>
+                        <option value="Kénitra">{% if t.lang_code == "en" %}Kenitra{% else %}Kénitra{% endif %}</option>
+                        <option value="Autre">{{ t.city_other }}</option>
                     </select>
                 </div>
 
@@ -216,6 +211,25 @@
         </div>
     </div>
 </section>
+
+<div class="trust-bar">
+    <div class="container trust-grid">
+        <div class="trust-item">
+            <span class="trust-icon" aria-hidden="true">✓</span>
+            <span>{{ t.trust_1 }}</span>
+        </div>
+        <div class="trust-item">
+            <span class="trust-icon" aria-hidden="true">◷</span>
+            <span>{{ t.trust_2 }}</span>
+        </div>
+        <div class="trust-item">
+            <span class="trust-icon" aria-hidden="true">◉</span>
+            <span>{{ t.trust_3 }}</span>
+        </div>
+    </div>
+</div>
+
+<a href="#order-form" class="mobile-sticky-cta">{{ t.cta_primary }}</a>
 
 <footer>
     <div class="social-links">
@@ -229,28 +243,24 @@
 <script>
     function selectProduct(index) {
         const select = document.getElementById('product');
-        select.selectedIndex = index;
-        document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+        select.selectedIndex = index === 0 ? 0 : 1;
+        document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' });
     }
 
     function sendWhatsAppOrder(e) {
         e.preventDefault();
         const waNumber = "{{ whatsapp }}";
-        const product = document.getElementById('product').value;
+        const product = document.getElementById('product').selectedOptions[0].text;
         const name = document.getElementById('name').value;
-        const city = document.getElementById('city').value;
+        const city = document.getElementById('city').selectedOptions[0].text;
         const phone = document.getElementById('phone').value;
-        const delivery = document.getElementById('delivery').value;
+        const message = `{{ t.wa_greeting }}\n` +
+                        `- {{ t.wa_name }} : ${name}\n` +
+                        `- {{ t.wa_phone }} : ${phone}\n` +
+                        `- {{ t.wa_city }} : ${city}\n` +
+                        `- {{ t.wa_product }} : ${product}`;
 
-        const message = `Bonjour Bistouria.ma, je souhaite commander :\n` +
-                        `- Produit : ${product}\n` +
-                        `- Nom : ${name}\n` +
-                        `- Ville : ${city}\n` +
-                        `- Téléphone : ${phone}\n` +
-                        `- Réception : ${delivery}`;
-
-        const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
-        window.open(url, '_blank');
+        window.location.href = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
     }
 </script>
 
