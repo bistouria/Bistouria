@@ -14,7 +14,7 @@
         <div class="nav-actions">
             <a href="{{ instagram }}" target="_blank" class="nav-link">Instagram</a>
             <a href="{{ t.switch_url }}" class="lang-btn">{{ t.switch_label }}</a>
-            <a href="#order-form" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">{{ t.cta_primary }}</a>
+            <a href="#order-form" class="btn btn-primary nav-order-cta" style="padding: 8px 16px; font-size: 0.9rem;">{{ t.cta_primary }}</a>
         </div>
     </div>
 </header>
@@ -351,6 +351,18 @@
                         `- {{ t.wa_product }} : ${product}`;
 
         window.location.href = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+    }
+
+    const orderForm = document.getElementById('order-form');
+    const mobileStickyCta = document.querySelector('.mobile-sticky-cta');
+
+    if ('IntersectionObserver' in window && orderForm && mobileStickyCta) {
+        const orderFormObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                mobileStickyCta.classList.toggle('is-hidden', entry.isIntersecting);
+            });
+        });
+        orderFormObserver.observe(orderForm);
     }
 </script>
 

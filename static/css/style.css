@@ -371,7 +371,25 @@ footer {
 .social-links a:hover { color: var(--accent); }
 
 .mobile-sticky-cta {
+    transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+}
+.mobile-sticky-cta.is-hidden {
+    opacity: 0;
+    transform: translateY(calc(100% + 12px));
+    pointer-events: none;
+    visibility: hidden;
+}
+.mobile-sticky-cta {
     display: none;
+}
+
+@media (max-width: 768px) {
+    .nav-order-cta { display: none; }
+    .nav-inner { padding: 0 12px; }
+    .nav-actions { gap: 4px; }
+    .nav-link { padding: 6px 4px; font-size: 0.8rem; }
+    .lang-btn { padding: 6px 8px; font-size: 0.8rem; }
+    .brand { font-size: 1.15rem; }
 }
 
 @media (max-width: 640px) {
