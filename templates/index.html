@@ -135,29 +135,6 @@
     </div>
 </section>
 
-<!-- قسم الأسئلة الشائعة -->
-<section class="section section-alt">
-    <div class="container">
-        <div class="section-head">
-            <h2>{{ t.faq_title }}</h2>
-        </div>
-        <div class="faq-list">
-            <div class="faq-item">
-                <h4>{{ t.faq_1_q }}</h4>
-                <p>{{ t.faq_1_a }}</p>
-            </div>
-            <div class="faq-item">
-                <h4>{{ t.faq_2_q }}</h4>
-                <p>{{ t.faq_2_a }}</p>
-            </div>
-            <div class="faq-item">
-                <h4>{{ t.faq_3_q }}</h4>
-                <p>{{ t.faq_3_a }}</p>
-            </div>
-        </div>
-    </div>
-</section>
-
 <section class="section comparison-section" aria-labelledby="comparison-title">
     <div class="container">
         <div class="section-head">
@@ -203,6 +180,70 @@
                 </div>
                 <button type="button" class="btn comparison-btn" onclick="selectProduct('Pack 2 Coussinets')">{{ t.comparison_choose }}</button>
             </article>
+        </div>
+    </div>
+</section>
+
+<section class="section techniques-section" aria-labelledby="techniques-title">
+    <div class="container">
+        <div class="section-head">
+            <h2 id="techniques-title">{{ t.techniques_title }}</h2>
+        </div>
+        <div class="techniques-grid">
+            <article class="technique-card">
+                <div class="technique-card-heading">
+                    <h3>{{ t.technique_simple_name }}</h3>
+                    <span class="level-badge level-beginner">{{ t.level_beginner }}</span>
+                </div>
+                <p>{{ t.technique_simple_desc }}</p>
+            </article>
+            <article class="technique-card">
+                <div class="technique-card-heading">
+                    <h3>{{ t.technique_continuous_name }}</h3>
+                    <span class="level-badge level-intermediate">{{ t.level_intermediate }}</span>
+                </div>
+                <p>{{ t.technique_continuous_desc }}</p>
+            </article>
+            <article class="technique-card">
+                <div class="technique-card-heading">
+                    <h3>{{ t.technique_blair_name }}</h3>
+                    <span class="level-badge level-advanced">{{ t.level_advanced }}</span>
+                </div>
+                <p>{{ t.technique_blair_desc }}</p>
+            </article>
+            <article class="technique-card">
+                <div class="technique-card-heading">
+                    <h3>{{ t.technique_knot_name }}</h3>
+                    <span class="level-badge level-intermediate">{{ t.level_intermediate }}</span>
+                </div>
+                <p>{{ t.technique_knot_desc }}</p>
+            </article>
+        </div>
+        <a class="techniques-cta" href="https://instagram.com/bistouria.ma" target="_blank" rel="noopener noreferrer">
+            {{ t.techniques_instagram_cta }}
+        </a>
+    </div>
+</section>
+
+<!-- قسم الأسئلة الشائعة -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="section-head">
+            <h2>{{ t.faq_title }}</h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h4>{{ t.faq_1_q }}</h4>
+                <p>{{ t.faq_1_a }}</p>
+            </div>
+            <div class="faq-item">
+                <h4>{{ t.faq_2_q }}</h4>
+                <p>{{ t.faq_2_a }}</p>
+            </div>
+            <div class="faq-item">
+                <h4>{{ t.faq_3_q }}</h4>
+                <p>{{ t.faq_3_a }}</p>
+            </div>
         </div>
     </div>
 </section>

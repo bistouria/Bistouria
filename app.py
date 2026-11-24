@@ -66,6 +66,21 @@ CONTENT = {
         "comparison_ideal_label": "Idéal pour",
         "comparison_choose": "Choisir ce pack",
 
+        # Techniques chirurgicales
+        "techniques_title": "Maîtrisez les sutures essentielles avant vos stages",
+        "technique_simple_name": "Point simple séparé",
+        "technique_simple_desc": "Ferme une plaie avec des points séparés et réguliers.",
+        "technique_continuous_name": "Surjet continu",
+        "technique_continuous_desc": "Ferme rapidement les plaies linéaires avec un fil continu.",
+        "technique_blair_name": "Point de Blair-Donati",
+        "technique_blair_desc": "Maintient les berges éversées sous une forte tension.",
+        "technique_knot_name": "Nœud de chirurgien",
+        "technique_knot_desc": "Un nœud renforcé qui limite le desserrage des sutures.",
+        "level_beginner": "Débutant",
+        "level_intermediate": "Intermédiaire",
+        "level_advanced": "Avancé",
+        "techniques_instagram_cta": "Suivez nos démonstrations vidéo réelles sur @bistouria.ma",
+
         # Section FAQ
         "faq_title": "Questions Fréquentes (FAQ)",
         "faq_1_q": "Puis-je vérifier le kit avant de payer ?",
@@ -154,6 +169,21 @@ CONTENT = {
         "comparison_includes_label": "Includes",
         "comparison_ideal_label": "Ideal for",
         "comparison_choose": "Choose this pack",
+
+        # Surgical techniques
+        "techniques_title": "Master essential surgical sutures before your rotations",
+        "technique_simple_name": "Simple Interrupted Suture",
+        "technique_simple_desc": "Closes a wound with separate, evenly spaced stitches.",
+        "technique_continuous_name": "Continuous Running Suture",
+        "technique_continuous_desc": "Quickly closes linear wounds with one continuous thread.",
+        "technique_blair_name": "Vertical Mattress (Blair-Donati)",
+        "technique_blair_desc": "Keeps wound edges everted under significant tension.",
+        "technique_knot_name": "Surgeon's Knot",
+        "technique_knot_desc": "A reinforced knot that helps prevent sutures from loosening.",
+        "level_beginner": "Beginner",
+        "level_intermediate": "Intermediate",
+        "level_advanced": "Advanced",
+        "techniques_instagram_cta": "Watch real suturing video demos on @bistouria.ma",
 
         # FAQ Section
         "faq_title": "Frequently Asked Questions (FAQ)",
